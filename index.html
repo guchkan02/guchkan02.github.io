@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shibu</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <p>Want to know more about Shibu!!! Then place an order to digitalize your thoughs :D</p>
+    <div id="app">
+        {{ message }}{{ display }}
+        <p>
+          <button v-on:click="clickButton($event, 'abc')">Click Me</button>
+        </p>
+      </div>
+    <script>
+        var app = new Vue({
+          el: '#app',
+          data: {
+            message: 'Hello Guchku! Need to complete it',
+            display: '...'
+          },
+          methods: {
+            clickButton: function(event, x) {
+              console.log(event);
+              console.log('Button clicked: ' + x);
+              this.display = ', Before you die, So work fast :D';
+            }
+          },
+          created: function() {
+            console.log('Created');
+          },
+          mounted: function() {
+            console.log('Code for visitor count goes here');
+          }
+        })
+      </script>
+</body>
+</html>
